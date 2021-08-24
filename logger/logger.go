@@ -17,6 +17,7 @@ func NewLogger(writer io.Writer) *Logger {
 	lgr := &Logger{baseLogger}
 	Formatter := new(logrus.TextFormatter)
 	Formatter.TimestampFormat = "2006-01-02T15:04:05"
+	Formatter.FullTimestamp = true
 	lgr.SetFormatter(Formatter)
 	lgr.SetOutput(writer)
 	return lgr
