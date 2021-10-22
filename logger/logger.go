@@ -57,14 +57,6 @@ func (l *Logger) Warnf(format string, args ...interface{}) {
 	}).Warnf(format, args...)
 }
 
-func (l *Logger) Warningf(format string, args ...interface{}) {
-	fn, pkg := getCallerInfo()
-	l.WithFields(logrus.Fields{
-		"source":  pkg,
-		"function": fn,
-	}).Warningf(format, args...)
-}
-
 func (l *Logger) Errorf(format string, args ...interface{}) {
 	fn, pkg := getCallerInfo()
 	l.WithFields(logrus.Fields{
