@@ -26,7 +26,7 @@ func NewLogger(writer io.Writer) *Logger {
 }
 
 func getCallerInfo() (fn string, pkg string) {
-	pc, _, _, ok := runtime.Caller(1)
+	pc, _, _, ok := runtime.Caller(2)
 	if !ok {
 		return "unknown", "unknown"
 	}
